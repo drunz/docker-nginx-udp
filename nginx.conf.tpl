@@ -15,8 +15,7 @@ stream {
       {{ range $container := $containers }}
         {{ range $address := $container.Addresses }}
                 {{ if eq $address.Port $port }}
-                # {{$container.Name}}
-                server {{ $address.IP }}:{{ $address.Port }};
+                server {{$container.Name}}:{{ $address.Port }};
                 {{ end }}
         {{ end }}
       {{ end }}
